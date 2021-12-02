@@ -11,6 +11,10 @@ while 1:
         kesk_palk,round(keskmine(palk),2)
         print ("keskmine palk on", kesk_palk)
 
-    elif read_key()=="B"
-    min_palk,kallel=minimum(palk,inimesed)
-    print
+    elif read_key()=="B":
+        min_palk,kallel=minimum(palk,inimesed)
+        print("Minimaalne palk=>",min_palk,"kellel=>",kellel)
+    elif read_key()=="C":
+        max_palk,kellel=maxsimum(palk,inimesed)
+        print("Maksimaalne palk=>",max_palk,"kellel=>",kellel)
+
