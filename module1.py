@@ -1,7 +1,52 @@
 from random import*
 palk=[1200,2500,750,395,1200]
 inimesed=["A","B","C","D","E"]
+def lists()->list:
+    """ listist teeme faili
+    :rtype: list, list
+    """
+    palgad=[]
+    with open("palgad.txt" "r") as p:
+        palgad.append(p.strip())
+    inimesed=[]
+    with open ("inimesed.txt" "r") as i:
+        inimesed.append(i.strip())
+    return palgad,inimesed
+
+def loe_failist_listisse(file:str)->list:
+    """ loeme tekst failist ja salvestame seda järendisse
+    """
+    file=open(file,"r")
+    list_=[]
+    for stroka in file:
+        list_.append(stroka.strip())
+    file.close()
+    return list
+
+def lisa(palk,iminene):
+    """ lisame inimest ja palgad
+    :param list inimene: nimed
+    :param list palk: palgad
+    :rtype: list,list
+    """
+    a=input("sisesta nimi=>")
+    inimesed.append(a)
+    b=int(input("sisesta palk=>"))
+    palk.append(b)
+    return(palk,inimene)
+def add_inimene():
+    """lisame inimesei ja palk
+    """
+    nimi=input("sisesta nimi")
+    palk=input("sisesta palk")
+    with open ("inimesed.txt", "a") as inimesed:
+        inimesed.write(nimi+"\n")
+    with open ("palgad.txt", "a") as palgad:
+        palgad.write(palk+"\n")
+
 def sisesta_andmed(i,p): 
+    """sisestame nimi ja palk
+    """
     N=4
     for n in range(N):
         a=input("sisesta nimi:")
@@ -11,11 +56,16 @@ def sisesta_andmed(i,p):
     return i,p
 
 def andmed_ekranile(i,p):
+    """näitame ekraanil nimi ja palk
+    """
     N=len(i)
     for n in range(N):
         print(i[n],"-",p[n])
 
 def kustutamine(i,p):
+    """kustutame inimes ja tema palk
+    :rtype: list,list
+    """
     nimi=input("sisesta nimi et teda eemaldada:")
     n=i.count(nimi)
     abi_list=[]
@@ -52,3 +102,4 @@ def otsing_nimi_jargi(inimesed:lost,palgad:list):
         else:
             t="Ei ole nimikirjas"
     return t
+
